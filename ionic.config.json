@@ -1,0 +1,7 @@
+{
+  "name": "ion-fortnite-store",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title *ngIf="!mobileScreen"> Loja Diária </ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <p>{{'Próxima Atualização Em' | uppercase}}</p>
+        <app-countdown-timer></app-countdown-timer>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6 col-md-4 col-lg-3 *ngFor="let item of dailyStore">
+        <ion-card>
+          <img [src]="item?.displayAssets[0]?.url" />
+          <ion-card-content>
+            <ion-card-title>{{ item?.displayName }}</ion-card-title>
+            <p>{{ item?.displayDescription }}</p>
+            <ion-note item-right
+              >{{ item?.price?.finalPrice }} V-Bucks</ion-note
+            >
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

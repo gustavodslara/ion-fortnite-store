@@ -8,21 +8,15 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
   dailyStore: any;
-
   mobileScreen: boolean = false;
 
-  constructor(private fortniteApi: FortniteApiIoService) {
-
-  }
+  constructor(private fortniteApi: FortniteApiIoService) {}
 
   ngOnInit() {
+    this.mobileScreen = window.innerWidth < 768;
     this.fortniteApi.getDailyStore().subscribe((data: any) => {
       this.dailyStore = data.shop;
     });
-    this.mobileScreen = window.innerWidth < 768;
   }
 
-  getCountdown()  {
-
-  }
 }

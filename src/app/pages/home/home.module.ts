@@ -1,4 +1,4 @@
-import { CountdownTimerModule } from './../../components/countdown-timer/countdown-timer.module';
+import { ComponentsModule } from './../../components/components.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
@@ -14,7 +14,7 @@ import { HomePageRoutingModule } from './home-routing.module';
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    CountdownTimerModule
+    ComponentsModule,
   ],
   declarations: [HomePage]
 })

@@ -1,3 +1,4 @@
+import { GoogleTranslateModule } from '../../pipes/translate-pipe/google-translate.module';
 import { ComponentsModule } from './../../components/components.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -7,7 +8,6 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 
-
 @NgModule({
   imports: [
     CommonModule,
@@ -15,7 +15,8 @@ import { HomePageRoutingModule } from './home-routing.module';
     IonicModule,
     HomePageRoutingModule,
     ComponentsModule,
+    GoogleTranslateModule,
   ],
-  declarations: [HomePage]
+  declarations: [HomePage],
 })
 export class HomePageModule {}

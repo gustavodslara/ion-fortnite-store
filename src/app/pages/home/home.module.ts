@@ -1,4 +1,6 @@
-import { GoogleTranslateModule } from '../../pipes/translate-pipe/google-translate.module';
+import {
+  GoogleTranslatePipeModule,
+} from './../../pipes/translate-pipe/google-translate.pipe.module';
 import { ComponentsModule } from './../../components/components.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -15,7 +17,7 @@ import { HomePageRoutingModule } from './home-routing.module';
     IonicModule,
     HomePageRoutingModule,
     ComponentsModule,
-    GoogleTranslateModule,
+    GoogleTranslatePipeModule,
   ],
   declarations: [HomePage],
 })

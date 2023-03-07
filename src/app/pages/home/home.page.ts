@@ -1,6 +1,5 @@
 import { FortniteApiIoService } from './../../services/fortnite-api-io.service';
 import { Component } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core/public_api';
 
 @Component({
   selector: 'app-home',

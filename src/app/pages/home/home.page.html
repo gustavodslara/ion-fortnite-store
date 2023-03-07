@@ -1,12 +1,13 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title *ngIf="!mobileScreen">
-      {{'Loja Diária'  }}</ion-title
+      {{'Loja Diária' | googleTranslate:deviceLanguage | async}}</ion-title
     >
     <ion-buttons slot="end">
-      <ion-button>
+      <ion-button *ngIf="!isLoading">
         <p>
-          {{'Próxima Atualização Em' | uppercase }}
+          {{'Próxima Atualização' | uppercase |
+          googleTranslate:deviceLanguage | async }}
         </p>
         <app-countdown-timer></app-countdown-timer>
       </ion-button>

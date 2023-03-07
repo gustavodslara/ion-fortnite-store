@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1678159037018,
+  "timestamp": 1678160655725,
   "index": "https://gustavodslara.github.io/ion-fortnite-store/index.html",
   "assetGroups": [
     {
@@ -52,7 +52,7 @@
         "https://gustavodslara.github.io/ion-fortnite-store/7544.37f9ebb7fd9ecf1e.js",
         "https://gustavodslara.github.io/ion-fortnite-store/7602.3cb6a34aece91fb0.js",
         "https://gustavodslara.github.io/ion-fortnite-store/8136.117c928a6cb28894.js",
-        "https://gustavodslara.github.io/ion-fortnite-store/8434.2a0f52206f6c53ed.js",
+        "https://gustavodslara.github.io/ion-fortnite-store/8434.80056cc753472637.js",
         "https://gustavodslara.github.io/ion-fortnite-store/8628.a088c1cf13dc93d1.js",
         "https://gustavodslara.github.io/ion-fortnite-store/8766.86553a4073f31820.js",
         "https://gustavodslara.github.io/ion-fortnite-store/8939.4734c10cd219622c.js",
@@ -67,12 +67,12 @@
         "https://gustavodslara.github.io/ion-fortnite-store/9958.cf9655497da540b9.js",
         "https://gustavodslara.github.io/ion-fortnite-store/common.f6546ae166082dac.js",
         "https://gustavodslara.github.io/ion-fortnite-store/index.html",
-        "https://gustavodslara.github.io/ion-fortnite-store/main.3bcc2eaee4f7e94f.js",
+        "https://gustavodslara.github.io/ion-fortnite-store/main.6cc09ad5a7fba11d.js",
         "https://gustavodslara.github.io/ion-fortnite-store/manifest.webmanifest",
         "https://gustavodslara.github.io/ion-fortnite-store/polyfills-core-js.20e9fb5568c66479.js",
         "https://gustavodslara.github.io/ion-fortnite-store/polyfills-dom.3a5e3168052f1fc5.js",
         "https://gustavodslara.github.io/ion-fortnite-store/polyfills.fc6fad8ce607b49d.js",
-        "https://gustavodslara.github.io/ion-fortnite-store/runtime.b7f9cfabc1124c1b.js",
+        "https://gustavodslara.github.io/ion-fortnite-store/runtime.ba0a86d10685919d.js",
         "https://gustavodslara.github.io/ion-fortnite-store/styles.bac947a5496135b1.css"
       ],
       "patterns": []
@@ -142,7 +142,7 @@
     "https://gustavodslara.github.io/ion-fortnite-store/7544.37f9ebb7fd9ecf1e.js": "5610ad5be4144065f13d17cc10ed931f7b9e8a6e",
     "https://gustavodslara.github.io/ion-fortnite-store/7602.3cb6a34aece91fb0.js": "4250c817b03c8bfcb495629dd5838fdc6cc61f63",
     "https://gustavodslara.github.io/ion-fortnite-store/8136.117c928a6cb28894.js": "3dd205929a0fb504871c088750f4d5dddf317060",
-    "https://gustavodslara.github.io/ion-fortnite-store/8434.2a0f52206f6c53ed.js": "7df8ee25cd0bec4c929fb9be510038a8ea4ae133",
+    "https://gustavodslara.github.io/ion-fortnite-store/8434.80056cc753472637.js": "d7c8b19a209268338dd5592d0ba6163a08c7a6dc",
     "https://gustavodslara.github.io/ion-fortnite-store/8628.a088c1cf13dc93d1.js": "ed07fd77c8bb952807b0f3bae119dd9c9275082d",
     "https://gustavodslara.github.io/ion-fortnite-store/8766.86553a4073f31820.js": "796b54789908962d08f7a752eb79c991821653eb",
     "https://gustavodslara.github.io/ion-fortnite-store/8939.4734c10cd219622c.js": "26f4578e648941878f986f15c77d6273f5652b9a",
@@ -166,13 +166,13 @@
     "https://gustavodslara.github.io/ion-fortnite-store/assets/icons/icon-96x96.png": "5b44a4287b23115c0b71f6d7e9f2cfdccdfc2cdd",
     "https://gustavodslara.github.io/ion-fortnite-store/assets/shapes.svg": "638f87e27e6fc7ddfd6e6b262ea70d690f6c7011",
     "https://gustavodslara.github.io/ion-fortnite-store/common.f6546ae166082dac.js": "8dbe100f35660db3cb4c205d5f25a8601f43ade5",
-    "https://gustavodslara.github.io/ion-fortnite-store/index.html": "8d05f708d16594d0a71ffafc0aa7696a9d78e4d4",
-    "https://gustavodslara.github.io/ion-fortnite-store/main.3bcc2eaee4f7e94f.js": "d3771c656049a29cd2690021f2720b768cc07878",
+    "https://gustavodslara.github.io/ion-fortnite-store/index.html": "a72a2a8c07edd140baa5d307e8d94aad2e0b1f15",
+    "https://gustavodslara.github.io/ion-fortnite-store/main.6cc09ad5a7fba11d.js": "19fa9306f46f89d66a20d0347c696acfd94d40f5",
     "https://gustavodslara.github.io/ion-fortnite-store/manifest.webmanifest": "04f319b5178041814f92edfac87089ab3cc98b7f",
     "https://gustavodslara.github.io/ion-fortnite-store/polyfills-core-js.20e9fb5568c66479.js": "7b2237821e79690f9dd2dac0b8a3b9ec6c229b76",
     "https://gustavodslara.github.io/ion-fortnite-store/polyfills-dom.3a5e3168052f1fc5.js": "50f6ff473a0568bffb8a9d412d7efaced2d36137",
     "https://gustavodslara.github.io/ion-fortnite-store/polyfills.fc6fad8ce607b49d.js": "29ecdc4392e1398b433f3838f08631c7ce701c6d",
-    "https://gustavodslara.github.io/ion-fortnite-store/runtime.b7f9cfabc1124c1b.js": "51a9416189956cad5a192b3899d2e5185dcb7de1",
+    "https://gustavodslara.github.io/ion-fortnite-store/runtime.ba0a86d10685919d.js": "7a5031cb1c3486469ad3db0c4dc8638281a5b610",
     "https://gustavodslara.github.io/ion-fortnite-store/styles.bac947a5496135b1.css": "e90b114e254dceedd2248beb664b6557a1a34ec7"
   },
   "navigationUrls": [

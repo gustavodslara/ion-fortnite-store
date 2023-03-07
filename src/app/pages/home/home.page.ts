@@ -10,19 +10,22 @@ export class HomePage {
   dailyStore: any;
 
   mobileScreen: boolean = false;
+  isLoading: boolean = true;
+  deviceLanguage: string;
 
-  constructor(private fortniteApi: FortniteApiIoService) {
-
+  constructor(
+    private fortniteApi: FortniteApiIoService,
+  ) {
+    this.deviceLanguage = navigator.language;
   }
 
   ngOnInit() {
-    this.fortniteApi.getDailyStore().subscribe((data: any) => {
-      this.dailyStore = data.shop;
-    });
     this.mobileScreen = window.innerWidth < 768;
-  }
-
-  getCountdown()  {
-
+    this.fortniteApi
+      .getDailyStore(this.deviceLanguage)
+      .subscribe((data: any) => {
+        this.dailyStore = data.shop;
+        this.isLoading = false;
+      });
   }
 }

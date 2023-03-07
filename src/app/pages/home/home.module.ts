@@ -1,4 +1,7 @@
-import { CountdownTimerModule } from './../../components/countdown-timer/countdown-timer.module';
+import {
+  GoogleTranslatePipeModule,
+} from './../../pipes/translate-pipe/google-translate.pipe.module';
+import { ComponentsModule } from './../../components/components.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
@@ -7,15 +10,15 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 
-
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    CountdownTimerModule
+    ComponentsModule,
+    GoogleTranslatePipeModule,
   ],
-  declarations: [HomePage]
+  declarations: [HomePage],
 })
 export class HomePageModule {}

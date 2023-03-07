@@ -3,16 +3,16 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class FortniteApiIoService {
-  private apiUrl = environment.apiUrl;
-  private apiKey = environment.apiKey; // Replace with your Fortnite API key
+  private apiUrl = environment.fortniteApiUrl;
+  private apiKey = environment.fortniteApiKey; // Replace with your Fortnite API key
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  getDailyStore() {
-    const headers = { 'Authorization': this.apiKey };
-    return this.http.get(this.apiUrl, { headers });
+  getDailyStore(deviceLanguage: string) {
+    const headers = { Authorization: this.apiKey };
+    return this.http.get(this.apiUrl + deviceLanguage, { headers });
   }
 }

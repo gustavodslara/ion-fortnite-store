@@ -7,7 +7,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class FortniteApiIoService {
   private apiUrl = environment.fortniteApiUrl;
-  private apiKey = environment.fortniteApiKey; // Replace with your Fortnite API key
+  private apiKey = environment.fortniteApiKey;
+
+  storeData: any;
+  loadingBoolean: boolean = true;
+  storeUpdate: boolean = false;
 
   constructor(private http: HttpClient) {}
 

@@ -7,25 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  dailyStore: any;
-
   mobileScreen: boolean = false;
-  isLoading: boolean = true;
   deviceLanguage: string;
 
-  constructor(
-    private fortniteApi: FortniteApiIoService,
-  ) {
-    this.deviceLanguage = navigator.language;
-  }
-
-  ngOnInit() {
+  constructor(public fortniteApi: FortniteApiIoService) {
     this.mobileScreen = window.innerWidth < 768;
+    this.deviceLanguage = navigator.language;
     this.fortniteApi
       .getDailyStore(this.deviceLanguage)
       .subscribe((data: any) => {
-        this.dailyStore = data.shop;
-        this.isLoading = false;
+        this.fortniteApi.storeData = data.shop;
+        this.fortniteApi.loadingBoolean = false;
       });
   }
+
 }

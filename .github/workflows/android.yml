@@ -16,8 +16,6 @@ jobs:
           node-version: '16'
       - name: Install dependencies
         run: npm install
-      - name: Ionic Capacitor Sync
-        run: npx cap sync
       - name: Build Ionic app
         run: ionic build --env.FORTNITE_API_KEY=${{ secrets.FORTNITE_API_KEY }} --env.GOOGLE_API_KEY=${{ secrets.GOOGLE_API_KEY }} 
       - name: Set up JDK 11

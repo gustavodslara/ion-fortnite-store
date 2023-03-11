@@ -38,8 +38,10 @@ export class AppComponent {
           title: 'Novos Itens na Loja!',
           body: 'A loja foi atualizada, entre para conferir o que há de novo!',
           id: 1,
+          sound: 'assets/fortnite-death.wav',
           schedule: {
             every: 'day',
+            repeats: true,
             at: midnightUTC,
           },
         },

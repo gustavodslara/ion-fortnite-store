@@ -1,0 +1,45 @@
+name: Build iOS Debug App
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+      - name: Install Dependencies
+        run: npm install
+      - name: Install Ionic CLI
+        run: npm install -g @ionic/cli
+      - name: Capacitor install ios
+        run: npm install @capacitor/ios 
+      - name: Capacitor sync
+        run: ionic capacitor sync
+      - name: Build
+        run: ionic build --configuration=debug --env.FORTNITE_API_KEY=${{ secrets.FORTNITE_API_KEY }} --env.GOOGLE_API_KEY=${{ secrets.GOOGLE_API_KEY }}
+      - name: Copy Web Assets
+        run: npx cap copy ios
+      - name: Open Xcode Project
+        continue-on-error: true
+        run: cd ios && open App.xcworkspace
+      - name: Archive
+        run: xcodebuild archive -workspace ios/App.xcworkspace -scheme App -destination 'generic/platform=iOS'
+      - name: Export
+        run: xcodebuild -exportArchive -archivePath $PWD/build/ios/App.xcarchive -exportOptionsPlist ios/exportOptions.plist -exportPath $PWD/build/ios
+      - name: Upload To Github Release  
+        uses: xresloader/upload-to-github-release@v1.3.11
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        with:
+          prerelease: true
+          draft: false
+          tags: true
+          overwrite: true
+          tag_name: v0.0.1
+          file: build/ios/App.ipa
+      

@@ -7,13 +7,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class FortniteApiIoService {
   private apiUrl = environment.fortniteApiUrl;
-  private apiKey = environment.fortniteApiKey;
+  private apiKey;
 
   storeData: any;
   loadingBoolean: boolean = true;
   storeUpdate: boolean = false;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.apiKey = environment.fortniteApiKey;
+  }
 
   getDailyStore(deviceLanguage: string) {
     const headers = { Authorization: this.apiKey };

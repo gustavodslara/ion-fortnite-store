@@ -18,7 +18,7 @@ export class FortniteApiIoService {
   }
 
   getDailyStore(deviceLanguage: string) {
-    const headers = { Authorization: this.apiKey };
+    const headers = { Authorization: '' + this.apiKey };
     return this.http.get(this.apiUrl + deviceLanguage, { headers });
   }
 }

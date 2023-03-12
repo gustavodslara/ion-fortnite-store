@@ -24,8 +24,14 @@ jobs:
         run: ionic build --env.FORTNITE_API_KEY=${{ secrets.FORTNITE_API_KEY }} --env.GOOGLE_API_KEY=${{ secrets.GOOGLE_API_KEY }}
       - name: Copy Web Assets
         run: npx cap copy ios
+      - name: Test ls
+        run: ls
+      - name: Test ls
+        run: cd ios
+      - name: Test ls
+        run: ls
       - name: Open Xcode Project
-        run: open ./ios/App.xcworkspace
+        run: open App.xcworkspace
       - name: Archive
         run: xcodebuild archive -workspace ios/App.xcworkspace -scheme App -destination 'generic/platform=iOS'
       - name: Export

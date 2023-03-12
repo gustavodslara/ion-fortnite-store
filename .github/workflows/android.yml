@@ -35,12 +35,11 @@ jobs:
         run: chmod +x ./android/gradlew
       - name: Build APK
         run: cd android && ./gradlew assembleDebug
-        
       - name: Upload To Github Release  
         uses: xresloader/upload-to-github-release@v1.3.11
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           prerelease: true
         with:
-          file: android/app/build/outputs/apk/debug/app-debug.apk
+          file: ./app/build/outputs/apk/debug/app-debug.apk
         

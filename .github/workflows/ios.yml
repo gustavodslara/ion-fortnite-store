@@ -25,7 +25,8 @@ jobs:
       - name: Copy Web Assets
         run: npx cap copy ios
       - name: Open Xcode Project
-        run: open ./ios/App.xcworkspace
+        continue-on-error: true
+        run: cd ios && open App.xcworkspace
       - name: Archive
         run: xcodebuild archive -workspace ios/App.xcworkspace -scheme App -destination 'generic/platform=iOS'
       - name: Export

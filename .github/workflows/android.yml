@@ -35,22 +35,14 @@ jobs:
         run: chmod +x ./android/gradlew
       - name: Build APK
         run: cd android && ./gradlew assembleDebug
-      - name: Create new release
-        uses: actions/create-release@v1
-        id: dev_test_release
+      - name: Create Release and upload
+        uses: varun-bst/release-action@v1.7
         with:
-          draft: false
+          allowUpdates: true
+          artifact: android/app/build/outputs/apk/debug/app-debug.apk
+          artifactContentType: application/vnd.android.package-archive
+          body: Dev testing release
           prerelease: true
-          release_name: ${{ steps.version.outputs.version }}
-          tag_name: ${{ github.ref }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-      - name: Upload APK to Releases
-        uses: actions/upload-release-asset@v1
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: android/app/build/outputs/apk/debug/app-debug.apk
-          asset_name: app-debug.apk
-          asset_content_type: application/vnd.android.package-archive
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          tag: v0.0.1
+          token: ${{ secrets.GH_TOKEN }}
+        

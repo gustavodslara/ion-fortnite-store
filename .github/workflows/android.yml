@@ -4,8 +4,7 @@ on:
   push:
     branches:
       - develop
-    tags:
-      - v0.0.1
+      
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -36,15 +35,14 @@ jobs:
         run: chmod +x ./android/gradlew
       - name: Build APK
         run: cd android && ./gradlew assembleDebug
-      - name: release
+      - name: Create new release
         uses: actions/create-release@v1
-        id: create_release
+        id: dev_test_release
         with:
           draft: false
           prerelease: true
           release_name: ${{ steps.version.outputs.version }}
           tag_name: ${{ github.ref }}
-          body_path: CHANGELOG.md
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       - name: Upload APK to Releases

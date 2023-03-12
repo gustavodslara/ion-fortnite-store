@@ -1,0 +1,40 @@
+name: Android Dev Build
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - name: Install dependencies
+        run: npm install
+      - name: Install Ionic CLI
+        run: npm install -g @ionic/cli
+      - name: Build Ionic app
+        run: ionic build --env.FORTNITE_API_KEY=${{ secrets.FORTNITE_API_KEY }} --env.GOOGLE_API_KEY=${{ secrets.GOOGLE_API_KEY }} 
+      - name: Setup Java JDK
+        uses: actions/setup-java@v3.10.0
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+      - name: Grant execute permission for gradlew
+        run: chmod +x ./android/gradlew
+      - name: Build APK
+        run: cd android && ./gradlew assembleDebug
+      - name: Upload APK to Releases
+        uses: actions/upload-release-asset@v1
+        with:
+          asset_path: android/app/build/outputs/apk/debug/app-debug.apk
+          asset_name: app-debug.apk
+          asset_content_type: application/vnd.android.package-archive
+          distribution: 'internal'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}

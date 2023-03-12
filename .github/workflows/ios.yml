@@ -21,7 +21,7 @@ jobs:
       - name: Capacitor sync
         run: ionic capacitor sync
       - name: Build
-        run: ionic build --env.FORTNITE_API_KEY=${{ secrets.FORTNITE_API_KEY }} --env.GOOGLE_API_KEY=${{ secrets.GOOGLE_API_KEY }}
+        run: ionic build --configuration=debug --env.FORTNITE_API_KEY=${{ secrets.FORTNITE_API_KEY }} --env.GOOGLE_API_KEY=${{ secrets.GOOGLE_API_KEY }}
       - name: Copy Web Assets
         run: npx cap copy ios
       - name: Open Xcode Project

@@ -25,13 +25,13 @@ jobs:
       - name: Copy Web Assets
         run: npx cap copy ios
       - name: Test ls
-        run: ls
+        run: ls ios
       - name: Test ls
         run: cd ios
-      - name: Test ls
-        run: ls
       - name: Open Xcode Project
-        run: open App.xcworkspace
+        run: |
+          cd ios
+          open App.xcworkspace
       - name: Archive
         run: xcodebuild archive -workspace ios/App.xcworkspace -scheme App -destination 'generic/platform=iOS'
       - name: Export

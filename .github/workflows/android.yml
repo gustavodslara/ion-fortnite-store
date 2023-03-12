@@ -18,12 +18,18 @@ jobs:
         run: npm install
       - name: Install Ionic CLI
         run: npm install -g @ionic/cli
+      - name: Capacitor add
+        run: npm install @capacitor/android 
+      - name: Capacitor add 2
+        run: ionic capacitor copy android
+      - name: Capacitor sync
+        run: ionic capacitor sync
       - name: Build Ionic app
         run: ionic build --env.FORTNITE_API_KEY=${{ secrets.FORTNITE_API_KEY }} --env.GOOGLE_API_KEY=${{ secrets.GOOGLE_API_KEY }} 
       - name: Setup Java JDK
         uses: actions/setup-java@v3.10.0
         with:
-          java-version: '17'
+          java-version: '11'
           distribution: 'adopt'
       - name: Grant execute permission for gradlew
         run: chmod +x ./android/gradlew

@@ -25,15 +25,9 @@ jobs:
       - name: Copy Web Assets
         run: npx cap copy ios
       - name: Test ls
-        run: ls ios
-      - name: Test ls
-        run: cd ios
-      - name: Open Xcode Project
-        run: |
-          cd ios
-          open App.xcworkspace
+        run: ls ./ios
       - name: Archive
-        run: xcodebuild archive -workspace ios/App.xcworkspace -scheme App -destination 'generic/platform=iOS'
+        run: xcodebuild clean -workspace ios/App.xcworkspace -scheme App -destination 'generic/platform=iOS' | xcpretty -s
       - name: Export
         run: xcodebuild -exportArchive -archivePath $PWD/build/ios/App.xcarchive -exportOptionsPlist ios/exportOptions.plist -exportPath $PWD/build/ios
       - name: Upload To Github Release  

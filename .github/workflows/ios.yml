@@ -27,9 +27,9 @@ jobs:
       - name: Test ls
         run: ls ./ios
       - name: Archive
-        run: xcodebuild clean -workspace ios/App.xcworkspace -scheme App -destination 'generic/platform=iOS' | xcpretty -s
+        run: xcodebuild clean -workspace ./ios/App.xcworkspace -scheme App -destination 'generic/platform=iOS' | xcpretty -s
       - name: Export
-        run: xcodebuild -exportArchive -archivePath $PWD/build/ios/App.xcarchive -exportOptionsPlist ios/exportOptions.plist -exportPath $PWD/build/ios
+        run: xcodebuild -exportArchive -archivePath $PWD/build/ios/App.xcarchive -exportOptionsPlist ./ios/exportOptions.plist -exportPath $PWD/build/ios
       - name: Upload To Github Release  
         uses: xresloader/upload-to-github-release@v1.3.11
         env:

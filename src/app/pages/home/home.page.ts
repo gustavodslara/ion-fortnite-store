@@ -16,6 +16,7 @@ export class HomePage {
     this.fortniteApi
       .getDailyStore(this.deviceLanguage)
       .subscribe((data: any) => {
+        console.log(data);
         this.fortniteApi.storeData = data.shop;
         this.fortniteApi.loadingBoolean = false;
       });

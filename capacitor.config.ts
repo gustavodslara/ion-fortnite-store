@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'ion-fortnite-store',
+  appId: 'com.github.gustavodslara.ionfortnitestore',
+  appName: 'Ion Fortnite Store',
   webDir: 'www',
   bundledWebRuntime: false,
   android: {

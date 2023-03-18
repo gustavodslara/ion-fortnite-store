@@ -1,10 +1,10 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title *ngIf="!mobileScreen">
+    <ion-title class="pointer-cursor" (click)="scrollTop()" *ngIf="!mobileScreen">
       {{'Loja Diária' | googleTranslate:deviceLanguage | async}}</ion-title
     >
     <ion-buttons slot="end">
-      <ion-button *ngIf="!fortniteApi.loadingBoolean">
+      <ion-button class="rounded-border" *ngIf="!fortniteApi.loadingBoolean">
         <p>
           {{'Próxima Atualização' | uppercase | googleTranslate:deviceLanguage |
           async }}
@@ -17,7 +17,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" padding>
+<ion-content id="store-content" [fullscreen]="true" padding>
   <ng-container *ngIf="fortniteApi.loadingBoolean; else showData">
     <app-center-spinner [deviceLanguage]="deviceLanguage"></app-center-spinner>
   </ng-container>

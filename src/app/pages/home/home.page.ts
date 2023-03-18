@@ -1,5 +1,6 @@
+import { IonContent } from '@ionic/angular';
 import { FortniteApiIoService } from './../../services/fortnite-api-io.service';
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -22,4 +23,10 @@ export class HomePage {
       });
   }
 
+  @ViewChild(IonContent)
+  content!: IonContent;
+
+  scrollTop() {
+    this.content.scrollToTop(400);
+  }
 }

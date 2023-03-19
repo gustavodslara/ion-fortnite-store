@@ -1,9 +1,11 @@
+import { FullscreenStoreItemComponent } from './../fullscreen-store-item/fullscreen-store-item.component';
 import { Component, Input } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-fortnite-card',
   template: `
-    <div class="card" [style.background]="rarityColor">
+    <div class="card" [style.background]="rarityColor" (click)="expandCard()">
       <img [src]="imageUrl" [alt]="name" />
       <div class="card-content">
         <h5>{{ name }}</h5>
@@ -28,6 +30,8 @@ export class StoreItemComponent {
   @Input()
   rarity!: string;
 
+  constructor(private modalController: ModalController) {}
+
   get rarityColor() {
     switch (this.rarity) {
       case 'Common':
@@ -44,4 +48,20 @@ export class StoreItemComponent {
         return 'radial-gradient(ellipse at top, #BDBDBD 40%, #000000)';
     }
   }
+
+  async expandCard() {
+    const modal = await this.modalController.create({
+      component: FullscreenStoreItemComponent,
+      componentProps: {
+        imageUrl: this.imageUrl,
+        name: this.name,
+        description: this.description,
+        price: this.price,
+        rarity: this.rarity,
+      },
+    });
+
+    return await modal.present();
+  }
 }
+

@@ -8,8 +8,10 @@ import { ModalController } from '@ionic/angular';
     <div class="card" [style.background]="rarityColor" (click)="expandCard()">
       <img [src]="imageUrl" [alt]="name" />
       <div class="card-content">
-        <h5>{{ name }}</h5>
-        <p>{{ description }}</p>
+        <p>
+          <b>{{ name }}</b>
+        </p>
+        <p class="description">{{ description }}</p>
         <p class="price">
           <span> {{ price }}</span> <img src="assets/images/vbucks-icon.png" />
         </p>
@@ -64,4 +66,3 @@ export class StoreItemComponent {
     return await modal.present();
   }
 }
-

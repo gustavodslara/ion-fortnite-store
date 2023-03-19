@@ -35,19 +35,21 @@
 
   .card-content {
     width: 100%;
-    padding: 1rem;
+    padding: 0.5rem;
     padding-right: 0;
     padding-left: 0;
     background-color: #fff;
 
     h2 {
       margin: 0;
-      font-size: 1.5rem;
+      font-size: 1rem;
+      font-weight: bold;
     }
     p {
       display: flex;
       justify-content: center;
       margin: 0.5rem;
+      font-size: 0.9rem;
 
       span {
         margin: 0.5rem;
